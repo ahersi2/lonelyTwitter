@@ -1,14 +1,16 @@
 package ca.ualberta.cs.lonelytwitter;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
  * Created by abdurahm on 9/13/17.
  */
 
-public class Tweet {
+public abstract class Tweet implements  Tweetable {
     private String message;
     private Date date;
+    private ArrayList<CurrentMood> CurrentMoodList;
 
 
     public Tweet(String message){
@@ -33,4 +35,10 @@ public class Tweet {
             throw new TweetTooLongException();
         }
     }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public abstract Boolean isImportant();
 }
