@@ -1,4 +1,4 @@
-package ca.ualberta.cs.lonelytwitter;
+package ca.ualberta.cs.controllers;
 
 import android.os.AsyncTask;
 import android.util.Log;
@@ -10,6 +10,7 @@ import com.searchly.jestdroid.JestDroidClient;
 import java.util.ArrayList;
 import java.util.List;
 
+import ca.ualberta.cs.lonelytwitter.NormalTweet;
 import io.searchbox.core.DocumentResult;
 import io.searchbox.core.Index;
 import io.searchbox.core.Search;

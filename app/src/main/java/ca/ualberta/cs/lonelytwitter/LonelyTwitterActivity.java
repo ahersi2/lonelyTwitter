@@ -9,14 +9,10 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Date;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,16 +22,30 @@ import android.util.Log;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import ca.ualberta.cs.controllers.ElasticsearchTweetController;
+
 
 public class LonelyTwitterActivity extends Activity {
 
-	private static final String FILENAME = "file.sav";
+	public static final String FILE_THENAME = "file.sav";
+	private static final String FILENAME = FILE_THENAME;
 	private EditText bodyText;
 	private ListView oldTweetsList;
 	private ArrayList<NormalTweet> tweetList = new ArrayList<NormalTweet>();
 	private ArrayAdapter<NormalTweet> adapter;
 
+	public static String getFILENAME() {
+		return FILENAME;
+	}
 
+
+	public EditText getBodyText() {
+		return bodyText;
+	}
+
+	public void setBodyText(EditText bodyText) {
+		this.bodyText = bodyText;
+	}
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
